@@ -48,7 +48,7 @@
         nav a { text-decoration:none; color:#333; font-size:1em; text-transform:lowercase; font-weight:400; transition: color .3s ease; }
         nav a:hover { color:#888; }
 
-        /* Language toggle styles (matching ) */
+        /* Language toggle styles (matching webpage.html) */
         #language-toggle {
             display: flex;
             align-items: baseline;
@@ -83,13 +83,21 @@
         }
 
         /* Make CV download and email links purple like the contact link */
-        #cv-link, #email-link {
+        #cv-link {
+            color: #5b2ca6; /* purple */
+            text-decoration: underline; /* keep underline for CV link */
+            transition: color 0.2s ease;
+        }
+        #cv-link:hover {
+            color: #8a63d6; /* lighter purple on hover */
+        }
+        #email-link {
             color: #5b2ca6; /* purple */
             text-decoration: none;
             transition: color 0.2s ease;
         }
-        #cv-link:hover, #email-link:hover {
-            color: #8a63d6; /* lighter purple on hover */
+        #email-link:hover {
+            color: #8a63d6;
         }
     </style>
 </head>
@@ -117,14 +125,14 @@
 
         <main>
             <p style="font-size: 2em;">cv</p>
-            <p id="summary" style="font-size: 1.5em;">you can find my cv <a href="CV_GuillermoMondragon.pdf" download>here</a></p>
+            <p id="summary" style="font-size: 1.5em;">you can find my cv <a id="cv-link" href="CV_GuillermoMondragon.pdf" download>here</a></p>
         </main>
     </div>
 
     <script>
         const translations = {
-          en:{ headerTitle:'guillermo mondragón', bio:'bio', research:'research', cv:'cv', contact:'contact', heading:'cv', summary:'you can find my cv here', linkText:'here'},
-          es:{ headerTitle:'guillermo mondragón', bio:'bio', research:'investigación', cv:'cv', contact:'contacto', heading:'cv', summary:'puedes encontrar mi cv aqui', linkText:'aquí'}
+          en:{ headerTitle:'guillermo mondragón', bio:'bio', research:'research', cv:'cv', contact:'contact', heading:'cv', summary:'you can find my cv', linkText:'here'},
+          es:{ headerTitle:'guillermo mondragón', bio:'bio', research:'investigación', cv:'cv', contact:'contacto', heading:'cv', summary:'puedes encontrar mi cv', linkText:'aquí'}
         };
 
         let currentLanguage = localStorage.getItem('siteLanguage') || 'en';
