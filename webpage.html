@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>guillermo mondragón – Homepage</title>
+  <base href="./">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Reset */
+    * { margin:0; padding:0; box-sizing:border-box }
+    html, body { width:100%; height:100%; overflow:hidden; }
+
+    /* --- Base Styles --- */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #111;
+      background-color: #f8f8f8;
+      font-weight: 400;
+      position:relative;
+    }
+
+    a {
+      color:inherit;
+      text-decoration:none;
+      cursor:pointer;
+      display:inline-block;
+    }
+
+    /* --- Layout --- */
+    .container {
+      max-width:1200px;
+      margin:0 auto;
+      padding:1em 2em;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* --- Header & Navigation --- */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 1em 0;
+        margin-bottom: 3em;
+        flex-wrap: wrap;
+    }
+
+    header h1 {
+        font-size: 1.6em;
+        margin: 0;
+        text-transform: lowercase;
+        font-weight: 400;
+        white-space: nowrap;
+        color: #000;
+    }
+
+    header h1 a:hover {
+        color: #888; /* Lighten the text color on hover */
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: baseline;
+    }
+
+    nav li {
+        margin-left: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1em;
+        text-transform: lowercase;
+        font-weight: 400;
+        transition: color 0.3s ease; /* Add transition for smooth color change */
+    }
+
+    /* This is the hover effect you requested - no underline */
+    nav a:hover {
+        color: #888; /* Lighten the text color */
+    }
+
+    /* --- Language Toggle Button (Aesthetic/Raw Version - No Underline) --- */
+    #language-toggle {
+      display: flex;
+      align-items: baseline;
+      cursor: pointer;
+    }
+
+    #language-toggle span {
+      font-family: 'Inter', sans-serif;
+      font-size: 1em;
+      font-weight: 400;
+      text-transform: lowercase;
+      color: #ccc; /* Inactive/Separator color */
+      transition: all 0.3s ease;
+      padding: 0 0.2em;
+    }
+
+    #language-toggle span.lang-en, #language-toggle span.lang-es {
+        cursor: pointer;
+    }
+
+    /* Active state is now just a color change, no underline */
+    #language-toggle span.active {
+      color: #111; /* Active color */
+      font-weight: 500; /* Make it slightly bolder */
+    }
+
+    /* Make the non-active language interactive on hover */
+    #language-toggle:hover span.lang-en:not(.active),
+    #language-toggle:hover span.lang-es:not(.active) {
+        color: #888;
+    }
+
+
+    /* --- Main Content --- */
+    .main-content {
+      display:flex;
+      gap:4em;
+      align-items:center;
+    }
+    .text-section {
+      flex:1;
+      max-width:50%;
+      padding-right:2em;
+    }
+    .text-section p {
+      font-size:2em;
+      line-height:1.2;
+      font-weight:400;
+    }
+    .image-section {
+      flex:1;
+      max-width:50%;
+      text-align: center;
+    }
+    .image-section img {
+      width: 40%;
+      height: auto;
+      display: inline-block;
+      border: 1px solid #EAEAEA;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+
+    .image-section img:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- Pixel Background --- */
+    #pixel-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .pixel {
+        position: absolute;
+        opacity: 0;
+        transform: scale(0.5);
+        animation: stitchIn 1s forwards;
+    }
+
+    @keyframes stitchIn {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media(max-width:768px){
+      body { overflow-x: hidden; overflow-y: auto; }
+      .container { padding:1em }
+      header {
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      nav ul {
+        margin-top:1em;
+        justify-content:flex-start;
+      }
+      nav li {
+        margin-left:0;
+        margin-right:1.5em;
+        margin-bottom: 0.8em;
+      }
+      .main-content {
+        flex-direction:column;
+        gap:2em;
+      }
+      .text-section, .image-section {
+        max-width:100%;
+        padding-right:0;
+        text-align: left;
+      }
+      .image-section img {
+        width: 60%;
+        display: block;
+        margin: 0;
+      }
+      .text-section p {
+        font-size:1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="pixel-canvas"></div>
+
+  <div class="container">
+    <header>
+      <h1><a href="webpage.html">guillermo mondragón</a></h1>
+      <nav>
+        <ul>
+          <li><a href="bio.html">bio</a></li>
+          <li><a href="research.html">research</a></li>
+          <li><a href="cv.html">cv</a></li>
+          <li><a href="contact.html">contact</a></li>
+          <li>
+            <div id="language-toggle">
+              <span class="lang-en active">en</span>
+              <span>/</span>
+              <span class="lang-es">es</span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="text-section">
+        <p>I'm PhD student in Politics at NYU. My research interests are political economy, democracy, and media</p>
+      </section>
+      <section class="image-section">
+        </section>
+
+    </main>
+  </div>
+
+<script>
+  const translations = {
+    en: {
+      headerTitle: 'guillermo mondragón',
+      bio: 'bio',
+      research: 'research',
+      cv: 'cv',
+      contact: 'contact',
+      mainText: "I'm PhD student in Politics at NYU. My research interests are political economy, democracy and media",
+    },
+    es: {
+      headerTitle: 'guillermo mondragón',
+      bio: 'bio',
+      research: 'investigación',
+      cv: 'cv',
+      contact: 'contacto',
+      mainText: 'Soy estudiante de doctorado en Ciencia Política en NYU. Estoy interesado en economía política, democracia y media',
+    }
+  };
+
+  let currentLanguage = 'en';
+
+  const langEnSpan = document.querySelector('.lang-en');
+  const langEsSpan = document.querySelector('.lang-es');
+
+  const updateText = () => {
+      langEnSpan.classList.toggle('active', currentLanguage === 'en');
+      langEsSpan.classList.toggle('active', currentLanguage === 'es');
+
+      document.querySelector('header h1 a').textContent = translations[currentLanguage].headerTitle;
+      document.querySelector('nav a[href="bio.html"]').textContent = translations[currentLanguage].bio;
+      document.querySelector('nav a[href="research.html"]').textContent = translations[currentLanguage].research;
+      document.querySelector('nav a[href="cv.html"]').textContent = translations[currentLanguage].cv;
+      document.querySelector('nav a[href="contact.html"]').textContent = translations[currentLanguage].contact;
+      document.querySelector('.text-section p').textContent = translations[currentLanguage].mainText;
+  }
+
+  langEnSpan.addEventListener('click', () => {
+      if (currentLanguage !== 'en') {
+          currentLanguage = 'en';
+          updateText();
+      }
+  });
+
+  langEsSpan.addEventListener('click', () => {
+      if (currentLanguage !== 'es') {
+          currentLanguage = 'es';
+          updateText();
+      }
+  });
+
+</script>
+
+  <script>
+    const canvas = document.getElementById('pixel-canvas');
+    
+    const motifData = {
+        cypressTree: [ "  1  ", " 111 ", "11111", "  1  ", "  1  " ],
+        featherDisc: [ " 111 ", "10001", "10101", "10001", " 111 " ],
+        beitDajanFlower: [ "10101", "01110", "11111", "11111", "01110", "10101" ],
+        borderLine: [ "101010101" ],
+        zigZag: [ "1001001", "0101010", "0011100" ]
+    };
+
+    const colors = { 1: '#B10000' };
+    const rand = (min, max) => Math.random() * (max - min) + min;
+    const choice = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+    function createPixel(x, y, size, color, delay) {
+        const pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        pixel.style.left = `${x}px`;
+        pixel.style.top = `${y}px`;
+        pixel.style.width = `${size}px`;
+        pixel.style.height = `${size}px`;
+        pixel.style.backgroundColor = color;
+        pixel.style.animationDelay = `${delay}s`;
+        canvas.appendChild(pixel);
+    }
+    
+    function drawMotif(motifGrid, startX, startY, pixelSize, motifColors, baseDelay) {
+        let pixelCount = 0;
+        const stitchDelay = 0.05;
+        motifGrid.forEach((row, r) => {
+            row.split('').forEach((char, c) => {
+                const colorKey = parseInt(char);
+                if (colorKey > 0 && motifColors[colorKey]) {
+                    const x = startX + c * pixelSize;
+                    const y = startY + r * pixelSize;
+                    createPixel(x, y, pixelSize, motifColors[colorKey], baseDelay + pixelCount * stitchDelay);
+                    pixelCount++;
+                }
+            });
+        });
+    }
+
+    function drawTextile() {
+        if (!document.querySelector('header') || !document.querySelector('.main-content')) return;
+        canvas.innerHTML = '';
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const numMotifs = 15;
+        const placedMotifAreas = [];
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const mainContent = document.querySelector('.main-content');
+        const mainContentRect = mainContent.getBoundingClientRect();
+        const restrictedAreas = [
+            { x: 0, y: 0, width: vw, height: headerHeight + 60 },
+            { x: mainContentRect.left, y: mainContentRect.top, width: mainContentRect.width, height: mainContentRect.height }
+        ];
+
+        for (let i = 0; i < numMotifs; i++) {
+            const motifKey = choice(Object.keys(motifData));
+            const motifGrid = motifData[motifKey];
+            const pixelSize = Math.floor(rand(2, 5));
+            const motifWidth = motifGrid[0].length * pixelSize;
+            const motifHeight = motifGrid.length * pixelSize;
+            let startX, startY, overlaps;
+            let attempts = 0;
+            do {
+                startX = rand(vw * 0.05, vw * 0.95 - motifWidth);
+                startY = rand(vh * 0.05, vh * 0.95 - motifHeight);
+                overlaps = placedMotifAreas.some(area => 
+                    startX < area.x + area.width && startX + motifWidth > area.x &&
+                    startY < area.y + area.height && startY + motifHeight > area.y
+                ) || restrictedAreas.some(area => 
+                    startX < area.x + area.width && startX + motifWidth > area.x &&
+                    startY < area.y + area.height && startY + motifHeight > area.y
+                );
+                attempts++;
+            } while (overlaps && attempts < 20);
+            
+            if (!overlaps) {
+                placedMotifAreas.push({ x: startX, y: startY, width: motifWidth, height: motifHeight });
+                const baseDelay = rand(0, 1.5);
+                drawMotif(motifGrid, startX, startY, pixelSize, colors, baseDelay);
+            }
+        }
+    }
+    
+    setTimeout(() => {
+        drawTextile();
+        window.addEventListener('resize', drawTextile);
+    }, 100);
+  </script>
+</body>
+</html>

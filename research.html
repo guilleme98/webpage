@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>research - Guillermo Mondragón</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #111; /* Apply a darker black color to all text */
+            background-color: #f8f8f8;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1em 2em;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 1em 0;
+            margin-bottom: 3em;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 1.6em;
+            margin: 0;
+            text-transform: lowercase;
+            font-weight: 400;
+            white-space: nowrap;
+            color: #000;
+        }
+
+        header h1 a {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        header h1 a:hover { color: #888; }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: baseline;
+        }
+
+        nav li { margin-left: 2em; margin-bottom: 0.5em; }
+        nav a { text-decoration: none; color: #333; font-size: 1em; text-transform: lowercase; font-weight: 400; transition: color 0.3s ease; }
+        nav a:hover { color: #888; }
+
+        /* Language toggle styles (matching webpage.html) */
+        #language-toggle {
+            display: flex;
+            align-items: baseline;
+            cursor: pointer;
+        }
+
+        #language-toggle span {
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            font-weight: 400;
+            text-transform: lowercase;
+            color: #ccc; /* Inactive/Separator color */
+            transition: all 0.3s ease;
+            padding: 0 0.2em;
+        }
+
+        #language-toggle span.lang-en, #language-toggle span.lang-es { cursor: pointer; }
+
+        /* Active state is now just a color change, no underline */
+        #language-toggle span.active { color: #111; font-weight: 500; }
+
+        /* Make the non-active language interactive on hover */
+        #language-toggle:hover span.lang-en:not(.active),
+        #language-toggle:hover span.lang-es:not(.active) { color: #888; }
+        /* End language toggle styles */
+
+        footer {
+            text-align: center;
+            padding: 2em 0;
+            margin-top: 4em;
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        .section {
+            margin-bottom: 3em;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+
+        .section ul {
+            list-style: disc;
+            margin-left: 2em;
+            margin-bottom: 1em;
+        }
+
+        .section ul li {
+            margin-bottom: 0.5em;
+        }
+
+        main {
+            margin-top: 2em;
+        }
+
+        main p {
+            margin-bottom: 1em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><a href="webpage.html">guillermo mondragón</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="bio.html">bio</a></li>
+                    <li><a href="research.html">research</a></li>
+                    <li><a href="cv.html">cv</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <li>
+                        <div id="language-toggle">
+                            <span class="lang-en active">en</span>
+                            <span>/</span>
+                            <span class="lang-es">es</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="research" class="section">
+     
+        <main>
+            <p id="research-title" style="font-size: 2em;">research</p>
+            <p id="working-papers" style="font-size: 1.5em;">working papers</p>
+            <p id="paper-1" style="font-size: 1em;">2025. “Can Taxes Improve Health? Evidence from Mexico and Alcohol Taxes”<br>
+            (with Horacio Larreguy)</p>
+            <p id="paper-2" style="font-size: 1em;">2023. “The Effect of Broadband Coverage on Voter Turnout in Mexico”</p>
+            <br>
+            <p id="wip-title" style="font-size: 1.5em;">work in progress</p>
+            <p id="wip-1" style="font-size: 1em;">“Beyond Borders: The Impact of Source Country Democracy on US Immigrant Integration”<br>
+            (with Cevat Giray Aksoy and Wifag Adnan)</p>
+            <p id="wip-2" style="font-size: 1em;">“Mobile Internet and Women’s Empowerment”<br>
+            (with Cevat Giray Aksoy and Sandra Rozo)</p>
+            <p id="wip-3" style="font-size: 1em;">“The Role of Female Leaders in Shaping Newsroom Diversity”<br>
+            (with Nicolas Ajzenman, Francesca Asja Trento, Mounu Prem and Ruben Durante)</p>
+        </main>
+        </div>
+
+    </div>
+
+    <script>
+      const translations = {
+        en: {
+          headerTitle:'guillermo mondragón',
+          bio:'bio',
+          research:'research',
+          cv:'cv',
+          contact:'contact',
+          researchTitle: 'research',
+          workingPapers: 'working papers',
+          paper1: '2025. "Can Taxes Improve Health? Evidence from Mexico and Alcohol Taxes" (with Horacio Larreguy)',
+          paper2: '2023. "The Effect of Broadband Coverage on Voter Turnout in Mexico"',
+          wipTitle: 'work in progress',
+          wip1: '"Beyond Borders: The Impact of Source Country Democracy on US Immigrant Integration" (with Cevat Giray Aksoy and Wifag Adnan)',
+          wip2: '"Mobile Internet and Women\'s Empowerment" (with Cevat Giray Aksoy and Sandra Rozo)',
+          wip3: '"The Role of Female Leaders in Shaping Newsroom Diversity" (with Nicolas Ajzenman, Francesca Asja Trento, Mounu Prem and Ruben Durante)'
+        },
+        es: {
+          headerTitle:'guillermo mondragón',
+          bio:'bio',
+          research:'investigación',
+          cv:'cv',
+          contact:'contacto',
+          researchTitle: 'investigación',
+          workingPapers: 'artículos de investigación',
+          paper1: '2025. "Can Taxes Improve Health? Evidence from Mexico and Alcohol Taxes" (with Horacio Larreguy)',
+          paper2: '2023. "The Effect of Broadband Coverage on Voter Turnout in Mexico"',
+          wipTitle: 'trabajo en proceso',
+          wip1: '"Beyond Borders: The Impact of Source Country Democracy on US Immigrant Integration" (with Cevat Giray Aksoy and Wifag Adnan)',
+          wip2: '"Mobile Internet and Women\'s Empowerment" (with Cevat Giray Aksoy and Sandra Rozo)',
+          wip3: '"The Role of Female Leaders in Shaping Newsroom Diversity" (with Nicolas Ajzenman, Francesca Asja Trento, Mounu Prem and Ruben Durante)'
+        }
+      };
+
+      let currentLanguage = localStorage.getItem('siteLanguage') || 'en';
+      const langEn = document.querySelector('.lang-en');
+      const langEs = document.querySelector('.lang-es');
+
+      const updateText = () => {
+        document.querySelector('header h1 a').textContent = translations[currentLanguage].headerTitle;
+        document.querySelector('nav a[href="bio.html"]').textContent = translations[currentLanguage].bio;
+        document.querySelector('nav a[href="research.html"]').textContent = translations[currentLanguage].research;
+        document.querySelector('nav a[href="cv.html"]').textContent = translations[currentLanguage].cv;
+        document.querySelector('nav a[href="contact.html"]').textContent = translations[currentLanguage].contact;
+
+        // Update research content
+        document.getElementById('research-title').textContent = translations[currentLanguage].researchTitle;
+        document.getElementById('working-papers').textContent = translations[currentLanguage].workingPapers;
+        document.getElementById('paper-1').textContent = translations[currentLanguage].paper1;
+        document.getElementById('paper-2').textContent = translations[currentLanguage].paper2;
+        document.getElementById('wip-title').textContent = translations[currentLanguage].wipTitle;
+        document.getElementById('wip-1').textContent = translations[currentLanguage].wip1;
+        document.getElementById('wip-2').textContent = translations[currentLanguage].wip2;
+        document.getElementById('wip-3').textContent = translations[currentLanguage].wip3;
+
+        langEn.classList.toggle('active', currentLanguage === 'en');
+        langEs.classList.toggle('active', currentLanguage === 'es');
+        localStorage.setItem('siteLanguage', currentLanguage);
+      };
+
+      langEn.addEventListener('click', () => { if (currentLanguage !== 'en') { currentLanguage='en'; updateText(); }});
+      langEs.addEventListener('click', () => { if (currentLanguage !== 'es') { currentLanguage='es'; updateText(); }});
+      updateText();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bio - Guillermo Mondragón</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #111;
+            background-color: #f8f8f8; /* Matched background color from the first example */
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1200px; /* Matched container width */
+            margin: 0 auto;
+            padding: 1em 2em;
+        }
+/* --- Header & Navigation (matched to webpage.html) --- */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 1em 0;
+        margin-bottom: 3em;
+        flex-wrap: wrap;
+    }
+
+    header h1 {
+        font-size: 1.6em;
+        margin: 0;
+        text-transform: lowercase;
+        font-weight: 400;
+        white-space: nowrap;
+        color: #000;
+    }
+
+    header h1 a {
+        color: inherit;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    header h1 a:hover {
+        color: #888; /* Lighten the text color on hover */
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: baseline;
+    }
+
+    nav li {
+        margin-left: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1em;
+        text-transform: lowercase;
+        font-weight: 400;
+        transition: color 0.3s ease; /* Add transition for smooth color change */
+    }
+
+    /* This is the hover effect you requested - no underline */
+    nav a:hover {
+        color: #888; /* Lighten the text color */
+    }
+
+    /* --- Language Toggle Button (Aesthetic/Raw Version - No Underline) --- */
+    #language-toggle {
+      display: flex;
+      align-items: baseline;
+      cursor: pointer;
+    }
+
+    #language-toggle span {
+      font-family: 'Inter', sans-serif;
+      font-size: 1em;
+      font-weight: 400;
+      text-transform: lowercase;
+      color: #ccc; /* Inactive/Separator color */
+      transition: all 0.3s ease;
+      padding: 0 0.2em;
+    }
+
+    #language-toggle span.lang-en, #language-toggle span.lang-es {
+        cursor: pointer;
+    }
+
+    /* Active state is now just a color change, no underline */
+    #language-toggle span.active {
+      color: #111; /* Active color */
+      font-weight: 500; /* Make it slightly bolder */
+    }
+
+    /* Make the non-active language interactive on hover */
+    #language-toggle:hover span.lang-en:not(.active),
+    #language-toggle:hover span.lang-es:not(.active) {
+        color: #888;
+    }
+
+
+        /* Main Content Layout */
+        .main-content {
+            display: flex;
+            align-items: flex-start; 
+            gap: 4em; 
+        }
+        
+        .main-content h2 {
+            font-size: 2em;
+            font-weight: 400;
+            margin: 0 0 0.5em 0;
+        }
+
+        .text-section {
+            flex: 5; 
+            min-width: 0; 
+        }
+
+        .text-section p {
+            font-size: 1em; 
+            margin-top: 0;
+            line-height: 1.7;
+        }
+
+        .image-section {
+            flex: 1;
+            min-width: 0;
+            margin-top: 3.2em;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2em 0;
+            margin-top: 4em;
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1em;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-bottom: 1em;
+            }
+
+            nav ul {
+                margin-top: 1em;
+                justify-content: flex-start;
+            }
+
+            nav li {
+                margin-left: 0;
+                margin-right: 1.5em;
+                margin-bottom: 0.5em;
+            }
+
+            .main-content {
+                flex-direction: column; 
+                gap: 2em;
+            }
+            
+            .image-section {
+                margin-top: 0;
+                width: 40%;
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><a href="webpage.html">guillermo mondragón</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="bio.html">bio</a></li>
+                    <li><a href="research.html">research</a></li>
+                    <li><a href="cv.html">cv</a></li>
+                    <li><a href="contact.html">contact</a></li>
+                    <li>
+                        <div id="language-toggle">
+                            <span class="lang-en active">en</span>
+                            <span>/</span>
+                            <span class="lang-es">es</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            
+            <div class="text-section">
+                <h2>bio</h2>
+                <p>I was born and grew up in Mexico City.  I pursued a bachelor's degree in economics at ITAM, concentrating on economic theory and political economy. In my undergraduate thesis, I investigated how the digital information revolution impacted political participation. I have worked on research projects in political economy, development economics, behavioral economics, and public policy at institutions such as ITAM, Johns Hopkins, Harvard, the Bank of Mexico, and the World Bank.</p>
+                <p>My research interests lie in understanding how economic factors, institutions, and political power interact to influence development, as well as the media’s role in social movements, political participation, misinformation, and polarization.</p>
+                <p>I'm an incoming PhD student in Politics at NYU.</p>
+            </div>
+
+            <section class="image-section">
+              <img src="./foto_perfil8.jpeg" alt="A photo of Guillermo Mondragón">
+            </section>
+            
+        </main>
+
+    </div>
+
+    <script>
+      const translations = {
+        en: {
+          headerTitle: 'guillermo mondragón',
+          bio: 'bio',
+          research: 'research',
+          cv: 'cv',
+          contact: 'contact',
+          pageHeading: 'bio',
+          p1: "I was born and grew up in Mexico City. I pursued a bachelor's degree in economics at ITAM, concentrating on economic theory and political economy. I have worked on research projects in political economy, development economics, behavioral economics, and public policy at institutions such as ITAM, Johns Hopkins, Harvard, the Bank of Mexico, and the World Bank.",
+          p2: 'My research interests lie in understanding how economic factors, institutions, and political power interact to influence development. Also the media’s role in social norms, political participation, misinformation, and polarization.',
+          p3: "I'm an incoming PhD student in Politics at NYU."
+        },
+        es: {
+          headerTitle: 'guillermo mondragón',
+          bio: 'bio',
+          research: 'investigación',
+          cv: 'cv',
+          contact: 'contacto',
+          pageHeading: 'bio',
+          p1: 'Nací y crecí en la Ciudad de México. Obtuve la licenciatura en economía en el ITAM en el área de fundamentos económicos e hice mi tesis sobre economía política. Desde entonces he trabajado en proyectos de investigación en economía política, desarrollo, economía del comportamiento y políticas públicas en instituciones como ITAM, Johns Hopkins, Harvard, el Banco de México y el Banco Mundial.',
+          p2: 'Mis intereses de investigación se centran en comprender cómo los factores económicos, las instituciones y el poder político interactúan para influir en el desarrollo. Así como en el papel de los medios en normas sociales, participación política, desinformación y la polarización.',
+          p3: 'Soy estudiante de doctorado en Ciencía Política en NYU.'
+        }
+      };
+
+      let currentLanguage = localStorage.getItem('siteLanguage') || 'en';
+      const langEn = document.querySelector('.lang-en');
+      const langEs = document.querySelector('.lang-es');
+
+      const updateText = () => {
+        document.querySelector('header h1 a').textContent = translations[currentLanguage].headerTitle;
+        document.querySelector('nav a[href="bio.html"]').textContent = translations[currentLanguage].bio;
+        document.querySelector('nav a[href="research.html"]').textContent = translations[currentLanguage].research;
+        document.querySelector('nav a[href="cv.html"]').textContent = translations[currentLanguage].cv;
+        document.querySelector('nav a[href="contact.html"]').textContent = translations[currentLanguage].contact;
+        document.querySelector('.text-section h2').textContent = translations[currentLanguage].pageHeading;
+        const ps = document.querySelectorAll('.text-section p');
+        ps[0].textContent = translations[currentLanguage].p1;
+        ps[1].textContent = translations[currentLanguage].p2;
+        ps[2].textContent = translations[currentLanguage].p3;
+
+        langEn.classList.toggle('active', currentLanguage === 'en');
+        langEs.classList.toggle('active', currentLanguage === 'es');
+        // persist selection so other pages initialize to same language
+        localStorage.setItem('siteLanguage', currentLanguage);
+      };
+
+      langEn.addEventListener('click', () => { if (currentLanguage !== 'en') { currentLanguage = 'en'; updateText(); }});
+      langEs.addEventListener('click', () => { if (currentLanguage !== 'es') { currentLanguage = 'es'; updateText(); }});
+
+      // Initialize
+      updateText();
+    </script>
+
+</body>
+</html>
